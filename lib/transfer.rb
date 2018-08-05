@@ -16,8 +16,14 @@ class Transfer
   end
 
   def execute_transaction
-    @sender.balance -= amount
-    @receiver.balance += amount
-    @status = 'complete'
+    if !valid? 
+      @status = 'rejected'
+    elsif status == 'complete'
+      "Can't make duplicate transaction"
+    else    
+      @sender.balance -= amount
+      @receiver.balance += amount
+      @status = 'complete'
+    end
   end
 end
