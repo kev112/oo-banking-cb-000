@@ -1,16 +1,18 @@
 class Transfer
   # your code here
 
-  attr_reader :from, :to, :amount, :status
+  attr_accessor :sender, :reciever, :amount, :status
 
-  def initialize(from, to, amount)
-    @from = from
-    @to = to
+  def initialize(sender, reciever, amount)
+    @sender = sender
+    @reciever = reciever
     @amount = amount
     @status = 'pending'
   end
 
   def valid?
-    @from.valid? && @to.valid? ? true : false
+    @sender.valid? && @reciever.valid? ? true : false
   end
+
+  
 end
