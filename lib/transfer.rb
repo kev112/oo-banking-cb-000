@@ -14,5 +14,5 @@ class Transfer
     @sender.valid? && @reciever.valid? ? true : false
   end
 
-  
+
 end
