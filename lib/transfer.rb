@@ -16,11 +16,11 @@ class Transfer
   end
 
   def execute_transaction
-    if !valid? 
+    if !valid?
       @status = 'rejected'
     elsif status == 'complete'
       "Can't make duplicate transaction"
-    else    
+    else
       @sender.balance -= amount
       @receiver.balance += amount
       @status = 'complete'
