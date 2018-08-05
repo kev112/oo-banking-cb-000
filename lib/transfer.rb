@@ -2,7 +2,7 @@ class Transfer
   # your code here
 
   attr_reader :from, :to, :amount, :status
-  
+
   def initialize(from, to, amount)
     @from = from
     @to = to
